@@ -34,7 +34,7 @@ namespace TicTacToe
             // 
             // resetGameButton
             // 
-            this.resetGameButton.Location = new System.Drawing.Point(291, 335);
+            this.resetGameButton.Location = new System.Drawing.Point(240, 383);
             this.resetGameButton.Name = "resetGameButton";
             this.resetGameButton.Size = new System.Drawing.Size(75, 23);
             this.resetGameButton.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(608, 427);
             this.Controls.Add(this.resetGameButton);
             this.Name = "mainForm";
             this.Text = "TIC TAC TOE";
