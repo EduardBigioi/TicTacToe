@@ -12,6 +12,20 @@ namespace TicTacToe
             currentPlayer = Ct.FirstPlayer;
         }
 
+        public void Move(int x, int y)
+        {
+            if (board[x,y] == Ct.FreeCell)
+            {
+                board[x, y] = currentPlayer;
+                TogglePlayer(ref currentPlayer);
+            }
+        }
+
+        private void TogglePlayer(ref int currentPlayer)
+        {
+            currentPlayer = (currentPlayer == Ct.FirstPlayer) ? Ct.SecondPlayer : Ct.FirstPlayer;
+        }
+
         private void InitBoard()
         {
             for (int i = 0; i < Ct.BoardSize; i++)
@@ -24,3 +38,5 @@ namespace TicTacToe
         }
     }
 }
+
+//(currentPlayer == Ct.FirstPlayer) ? Ct.SecondPlayer : Ct.FirstPlayer;
