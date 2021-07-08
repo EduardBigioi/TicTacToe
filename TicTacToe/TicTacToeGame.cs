@@ -16,16 +16,20 @@ namespace TicTacToe
         public int Play(int x, int y)
         {
             Move(x, y);
+            ConsoleShow();
             return GetWinner(x,y);
         }
 
         private bool WeHaveAWinner(int x, int y)
         {
+
             if (board[x, 0] == board[x, 1] && board[x, 1] == board[x, 2]) return true;
             if (board[0, y] == board[1, y] && board[1, y] == board[2, y]) return true;
 
-            if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2]) return true;
-            if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0]) return true;
+            if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2] && board[0,0] != Ct.FreeCell) 
+                return true;
+            if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[0,2] != Ct.FreeCell) 
+                return true;
 
             return false;
         }
@@ -38,6 +42,19 @@ namespace TicTacToe
             return Ct.NoWinner;
         }
 
+        private void ConsoleShow()
+        {
+            Console.WriteLine("-------------------");
+            for (int i = 0; i < Ct.BoardSize; i++)
+            {
+                string t = "";
+                for (int j = 0; j < Ct.BoardSize; j++)
+                {
+                    t += board[i, j].ToString();
+                }
+                Console.WriteLine(t);
+            }
+        }
         public void Move(int x, int y)
         {
             if (board[x, y] == Ct.FreeCell)
