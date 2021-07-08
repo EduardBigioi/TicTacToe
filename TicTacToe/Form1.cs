@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
-        public Form1()
+        TicTacToeGame game;
+        public mainForm()
         {
             InitializeComponent();
+            game = new TicTacToeGame();
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            game.Start();
         }
     }
 }
