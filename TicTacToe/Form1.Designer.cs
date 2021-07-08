@@ -50,6 +50,7 @@ namespace TicTacToe
             this.Controls.Add(this.startButton);
             this.Name = "mainForm";
             this.Text = "TIC TAC TOE";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -6,28 +6,17 @@ namespace TicTacToe
     {
         int[,] board = new int[Ct.BoardSize, Ct.BoardSize];
         int currentPlayer;
-        int winner;
+
         public void Start()
         {
             InitBoard();
             currentPlayer = Ct.FirstPlayer;
         }
 
-        public void Move(int x, int y)
+        public int Play(int x, int y)
         {
-            if (board[x, y] == Ct.FreeCell)
-            {
-                board[x, y] = currentPlayer;
-                if (WeHaveAWinner(x, y))
-                {
-                    winner = currentPlayer;
-                }
-                else
-                {
-                    TogglePlayer();
-                }
-
-            }
+            Move(x, y);
+            return GetWinner(x,y);
         }
 
         private bool WeHaveAWinner(int x, int y)
@@ -39,6 +28,27 @@ namespace TicTacToe
             if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0]) return true;
 
             return false;
+        }
+        private int GetWinner(int x, int y)
+        {
+            if (WeHaveAWinner(x,y))
+            {
+                return currentPlayer;
+            }
+            return Ct.NoWinner;
+        }
+
+        public void Move(int x, int y)
+        {
+            if (board[x, y] == Ct.FreeCell)
+            {
+                board[x, y] = currentPlayer;
+                if (!WeHaveAWinner(x, y))
+                {
+                    TogglePlayer();
+                }
+
+            }
         }
 
         private void TogglePlayer()
@@ -59,4 +69,3 @@ namespace TicTacToe
     }
 }
 
-//(currentPlayer == Ct.FirstPlayer) ? Ct.SecondPlayer : Ct.FirstPlayer;
