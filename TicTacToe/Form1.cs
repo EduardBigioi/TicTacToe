@@ -58,7 +58,8 @@ namespace TicTacToe
 
         private void ClickOnCell(object sender, MouseEventArgs e)
         {
-            
+            if (e.Button == MouseButtons.Right)
+                ((Label)sender).BackColor = Color.Red;
         }
     }
 }
