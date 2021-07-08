@@ -23,5 +23,8 @@ namespace TicTacToe
         public static string FreeCellText = ".";
         public static int CellGap = 4;
         public static Color CellColor = Color.LightBlue;
+
+        public static string FirstPlayerText = "X";
+        public static string SecondPlayerText = "0";
     }
 }
