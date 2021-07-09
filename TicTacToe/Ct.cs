@@ -19,7 +19,7 @@ namespace TicTacToe
 
         public static int LeftMargin = 20;
         public static int TopMargin = 20;
-        public static int CellSize = 50;
+        public static int CellSize = 100;
         public static string FreeCellText = ".";
         public static int CellGap = 4;
         public static Color CellColor = Color.LightBlue;
