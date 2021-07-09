@@ -55,13 +55,16 @@ namespace TicTacToe
             // 
             // gamePanel
             // 
-            this.gamePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gamePanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gamePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gamePanel.Location = new System.Drawing.Point(86, 138);
+            this.gamePanel.Location = new System.Drawing.Point(122, 24);
             this.gamePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(250, 260);
+            this.gamePanel.Size = new System.Drawing.Size(200, 200);
             this.gamePanel.TabIndex = 2;
+            this.gamePanel.SizeChanged += new System.EventHandler(this.gamePanel_SizeChanged);
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // gameSplitContainer
             // 
@@ -102,6 +105,7 @@ namespace TicTacToe
             // gameOptionsSplitContainer.Panel2
             // 
             this.gameOptionsSplitContainer.Panel2.Controls.Add(this.gamePanel);
+            this.gameOptionsSplitContainer.Panel2.Resize += new System.EventHandler(this.gameOptionsSplitContainer_Panel2_Resize);
             this.gameOptionsSplitContainer.Size = new System.Drawing.Size(643, 479);
             this.gameOptionsSplitContainer.SplitterDistance = 200;
             this.gameOptionsSplitContainer.SplitterWidth = 2;
@@ -113,9 +117,11 @@ namespace TicTacToe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 552);
             this.Controls.Add(this.gameSplitContainer);
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "mainForm";
             this.Text = "TIC TAC TOE";
             this.Load += new System.EventHandler(this.mainForm_Load);
+            this.ResizeEnd += new System.EventHandler(this.mainForm_ResizeEnd);
             this.gameSplitContainer.Panel1.ResumeLayout(false);
             this.gameSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gameSplitContainer)).EndInit();
