@@ -23,20 +23,21 @@ namespace TicTacToe
         {
             game = new TicTacToeGame();
             game.Start();
-            InitBoard();
+            InitBoard(gamePanel);
         }
 
-        private void InitBoard()
+        private void InitBoard(ScrollableControl t)
         {
             for (int i = 0; i < Ct.BoardSize; i++)
             {
                 for (int j = 0; j < Ct.BoardSize; j++)
                 {
                     board[i, j] = new Label();
-                    SetCellProperties(i,j);
+                    SetCellProperties(i, j);
                     board[i, j].MouseClick += ClickOnCell;
 
-                    gamePanel.Controls.Add(board[i, j]);
+                    t.Controls.Add(board[i, j]);
+
                 }
             }
         }
@@ -58,11 +59,11 @@ namespace TicTacToe
         private void ClickOnCell(object sender, MouseEventArgs e)
         {
             (int x, int y) positionInBoard = GetPosition((Label)sender);
-            game.Play(positionInBoard.x ,positionInBoard.y);
+            game.Play(positionInBoard.x, positionInBoard.y);
 
             ChangeCell(positionInBoard.x, positionInBoard.y);
-            
-            if (game.WeHaveAWinner(positionInBoard.x ,positionInBoard.y))
+
+            if (game.WeHaveAWinner(positionInBoard.x, positionInBoard.y))
             {
                 MessageBox.Show("We have a winner");
                 game.Start();
