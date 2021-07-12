@@ -17,8 +17,8 @@ namespace TicTacToe
 
         public static int NoWinner = FreeCell;
 
-        public static int LeftMargin = 20;
-        public static int TopMargin = 20;
+        public static int LeftMargin = Convert.ToInt32(Properties.Resources.LeftMargin);
+        public static int TopMargin = Convert.ToInt32(Properties.Resources.TopMargin);
         public static int CellSize = 100;
         public static string FreeCellText = ".";
         public static int CellGap = 4;
