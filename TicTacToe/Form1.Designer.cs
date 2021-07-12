@@ -37,6 +37,7 @@ namespace TicTacToe
             this.player2Label = new System.Windows.Forms.Label();
             this.player1TextBox = new System.Windows.Forms.TextBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
+            this.resultsDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gameSplitContainer)).BeginInit();
             this.gameSplitContainer.Panel1.SuspendLayout();
             this.gameSplitContainer.Panel2.SuspendLayout();
@@ -45,6 +46,7 @@ namespace TicTacToe
             this.gameOptionsSplitContainer.Panel1.SuspendLayout();
             this.gameOptionsSplitContainer.Panel2.SuspendLayout();
             this.gameOptionsSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // resetGameButton
@@ -108,6 +110,7 @@ namespace TicTacToe
             // gameOptionsSplitContainer.Panel1
             // 
             this.gameOptionsSplitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gameOptionsSplitContainer.Panel1.Controls.Add(this.resultsDataGridView);
             this.gameOptionsSplitContainer.Panel1.Controls.Add(this.player2TextBox);
             this.gameOptionsSplitContainer.Panel1.Controls.Add(this.player1TextBox);
             this.gameOptionsSplitContainer.Panel1.Controls.Add(this.player2Label);
@@ -156,6 +159,18 @@ namespace TicTacToe
             this.player2TextBox.TabIndex = 3;
             this.player2TextBox.Text = "Dorel";
             // 
+            // resultsDataGridView
+            // 
+            this.resultsDataGridView.AllowUserToAddRows = false;
+            this.resultsDataGridView.AllowUserToDeleteRows = false;
+            this.resultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.resultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultsDataGridView.Location = new System.Drawing.Point(5, 142);
+            this.resultsDataGridView.Name = "resultsDataGridView";
+            this.resultsDataGridView.ReadOnly = true;
+            this.resultsDataGridView.Size = new System.Drawing.Size(192, 336);
+            this.resultsDataGridView.TabIndex = 4;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +191,7 @@ namespace TicTacToe
             this.gameOptionsSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gameOptionsSplitContainer)).EndInit();
             this.gameOptionsSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +206,7 @@ namespace TicTacToe
         private System.Windows.Forms.TextBox player1TextBox;
         private System.Windows.Forms.Label player2Label;
         private System.Windows.Forms.Label player1Label;
+        private System.Windows.Forms.DataGridView resultsDataGridView;
     }
 }
 
