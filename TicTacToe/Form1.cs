@@ -23,6 +23,9 @@ namespace TicTacToe
         {
             game = new TicTacToeGame();
             game.Start(player1TextBox.Text, player2TextBox.Text);
+            game.LoadResults("results.json"); // TODO - move file name in resource file
+            resultsDataGridView.DataSource = null;
+            resultsDataGridView.DataSource = game.gameResults;
             InitBoard(gamePanel);
             ResizeBoard(gamePanel);
         }
@@ -175,6 +178,11 @@ namespace TicTacToe
         private void resetGameButton_MouseLeave(object sender, EventArgs e)
         {
             resetGameButton.BackColor = Color.LightGray;
+        }
+
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            game.SaveResults("results.json");
         }
     }
 }

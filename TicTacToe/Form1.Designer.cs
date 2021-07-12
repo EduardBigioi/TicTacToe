@@ -180,6 +180,7 @@ namespace TicTacToe
             this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "mainForm";
             this.Text = "TIC TAC TOE";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResizeEnd += new System.EventHandler(this.mainForm_ResizeEnd);
             this.gameSplitContainer.Panel1.ResumeLayout(false);

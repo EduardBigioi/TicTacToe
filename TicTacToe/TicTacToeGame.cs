@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace TicTacToe
 {
@@ -26,6 +28,12 @@ namespace TicTacToe
             return Ct.FreeCellText;
         }
 
+        internal void LoadResults(string fileName)
+        {
+             string serialisedResults = File.ReadAllText(fileName);      
+            gameResults = JsonConvert.DeserializeObject <List<GameResult>>(serialisedResults);
+
+        }
 
         public int Play(int x, int y)
         {
@@ -137,6 +145,12 @@ namespace TicTacToe
         internal void Reset()
         {
             throw new NotImplementedException();
+        }
+
+        internal void SaveResults(string fileName)
+        {
+            string serialisedResults = JsonConvert.SerializeObject(gameResults);
+            File.WriteAllText(fileName,serialisedResults);
         }
     }
 }
