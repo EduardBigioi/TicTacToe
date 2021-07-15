@@ -184,5 +184,27 @@ namespace TicTacToe
         {
             game.SaveResults("results.json");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var t = game.gameResults.OrderBy(x => x.Player1);
+
+            resultsDataGridView.DataSource = null;
+            resultsDataGridView.DataSource = t.ToList();
+
+        }
+
+        private void resultsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var t = game.gameResults.Where(x => x.Player1.StartsWith(player1NameFilterTextBox.Text));
+
+            resultsDataGridView.DataSource = null;
+            resultsDataGridView.DataSource = t.ToList();
+        }
     }
 }
