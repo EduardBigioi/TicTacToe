@@ -14,6 +14,7 @@ namespace TicTacToe
     {
         TicTacToeGame game;
         Label[,] board = new Label[Ct.BoardSize, Ct.BoardSize];
+        bool orderDirection = true;
         public mainForm()
         {
             InitializeComponent();
@@ -187,11 +188,19 @@ namespace TicTacToe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var t = game.gameResults.OrderBy(x => x.Player1);
-
-            resultsDataGridView.DataSource = null;
-            resultsDataGridView.DataSource = t.ToList();
-
+            if (orderDirection)
+            {
+                var t = game.gameResults.OrderBy(x => x.Player1);
+                resultsDataGridView.DataSource = null;
+                resultsDataGridView.DataSource = t.ToList();
+            }
+            else
+            {
+                var t = game.gameResults.OrderByDescending(x => x.Player1);
+                resultsDataGridView.DataSource = null;
+                resultsDataGridView.DataSource = t.ToList();
+            }
+            orderDirection = !orderDirection;
         }
 
         private void resultsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
