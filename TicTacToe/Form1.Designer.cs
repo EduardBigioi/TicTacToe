@@ -33,13 +33,13 @@ namespace TicTacToe
             this.gamePanel = new System.Windows.Forms.Panel();
             this.gameSplitContainer = new System.Windows.Forms.SplitContainer();
             this.gameOptionsSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.player1NameFilterTextBox = new System.Windows.Forms.TextBox();
             this.OrderByPlayer1Button = new System.Windows.Forms.Button();
             this.resultsDataGridView = new System.Windows.Forms.DataGridView();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.player1TextBox = new System.Windows.Forms.TextBox();
             this.player2Label = new System.Windows.Forms.Label();
             this.player1Label = new System.Windows.Forms.Label();
-            this.player1NameFilterTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gameSplitContainer)).BeginInit();
             this.gameSplitContainer.Panel1.SuspendLayout();
             this.gameSplitContainer.Panel2.SuspendLayout();
@@ -54,9 +54,10 @@ namespace TicTacToe
             // resetGameButton
             // 
             this.resetGameButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resetGameButton.Location = new System.Drawing.Point(5, 5);
+            this.resetGameButton.Location = new System.Drawing.Point(7, 6);
+            this.resetGameButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.resetGameButton.Name = "resetGameButton";
-            this.resetGameButton.Size = new System.Drawing.Size(633, 55);
+            this.resetGameButton.Size = new System.Drawing.Size(843, 51);
             this.resetGameButton.TabIndex = 0;
             this.resetGameButton.Text = "Restart";
             this.resetGameButton.UseVisualStyleBackColor = true;
@@ -69,10 +70,10 @@ namespace TicTacToe
             this.gamePanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gamePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gamePanel.Location = new System.Drawing.Point(125, 27);
-            this.gamePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.gamePanel.Location = new System.Drawing.Point(201, 42);
+            this.gamePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(200, 200);
+            this.gamePanel.Size = new System.Drawing.Size(267, 246);
             this.gamePanel.TabIndex = 2;
             this.gamePanel.SizeChanged += new System.EventHandler(this.gamePanel_SizeChanged);
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -82,7 +83,7 @@ namespace TicTacToe
             this.gameSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gameSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.gameSplitContainer.Location = new System.Drawing.Point(0, 0);
-            this.gameSplitContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.gameSplitContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gameSplitContainer.Name = "gameSplitContainer";
             this.gameSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -95,9 +96,9 @@ namespace TicTacToe
             // 
             this.gameSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.gameSplitContainer.Panel2.Controls.Add(this.resetGameButton);
-            this.gameSplitContainer.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.gameSplitContainer.Size = new System.Drawing.Size(643, 552);
-            this.gameSplitContainer.SplitterDistance = 485;
+            this.gameSplitContainer.Panel2.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.gameSplitContainer.Size = new System.Drawing.Size(857, 679);
+            this.gameSplitContainer.SplitterDistance = 614;
             this.gameSplitContainer.SplitterWidth = 2;
             this.gameSplitContainer.TabIndex = 3;
             // 
@@ -106,7 +107,7 @@ namespace TicTacToe
             this.gameOptionsSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gameOptionsSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.gameOptionsSplitContainer.Location = new System.Drawing.Point(0, 0);
-            this.gameOptionsSplitContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.gameOptionsSplitContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gameOptionsSplitContainer.Name = "gameOptionsSplitContainer";
             // 
             // gameOptionsSplitContainer.Panel1
@@ -122,18 +123,30 @@ namespace TicTacToe
             // 
             // gameOptionsSplitContainer.Panel2
             // 
+            this.gameOptionsSplitContainer.Panel2.BackColor = System.Drawing.Color.GreenYellow;
             this.gameOptionsSplitContainer.Panel2.Controls.Add(this.gamePanel);
+            this.gameOptionsSplitContainer.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gameOptionsSplitContainer_Panel2_Paint);
             this.gameOptionsSplitContainer.Panel2.Resize += new System.EventHandler(this.gameOptionsSplitContainer_Panel2_Resize);
-            this.gameOptionsSplitContainer.Size = new System.Drawing.Size(643, 485);
+            this.gameOptionsSplitContainer.Size = new System.Drawing.Size(857, 614);
             this.gameOptionsSplitContainer.SplitterDistance = 200;
-            this.gameOptionsSplitContainer.SplitterWidth = 2;
+            this.gameOptionsSplitContainer.SplitterWidth = 3;
             this.gameOptionsSplitContainer.TabIndex = 0;
+            // 
+            // player1NameFilterTextBox
+            // 
+            this.player1NameFilterTextBox.Location = new System.Drawing.Point(60, 170);
+            this.player1NameFilterTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.player1NameFilterTextBox.Name = "player1NameFilterTextBox";
+            this.player1NameFilterTextBox.Size = new System.Drawing.Size(83, 22);
+            this.player1NameFilterTextBox.TabIndex = 6;
+            this.player1NameFilterTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // OrderByPlayer1Button
             // 
-            this.OrderByPlayer1Button.Location = new System.Drawing.Point(114, 135);
+            this.OrderByPlayer1Button.Location = new System.Drawing.Point(152, 166);
+            this.OrderByPlayer1Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OrderByPlayer1Button.Name = "OrderByPlayer1Button";
-            this.OrderByPlayer1Button.Size = new System.Drawing.Size(28, 23);
+            this.OrderByPlayer1Button.Size = new System.Drawing.Size(37, 28);
             this.OrderByPlayer1Button.TabIndex = 5;
             this.OrderByPlayer1Button.Text = "<";
             this.OrderByPlayer1Button.UseVisualStyleBackColor = true;
@@ -145,62 +158,61 @@ namespace TicTacToe
             this.resultsDataGridView.AllowUserToDeleteRows = false;
             this.resultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultsDataGridView.Location = new System.Drawing.Point(5, 164);
+            this.resultsDataGridView.Location = new System.Drawing.Point(7, 202);
+            this.resultsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.resultsDataGridView.Name = "resultsDataGridView";
             this.resultsDataGridView.ReadOnly = true;
-            this.resultsDataGridView.Size = new System.Drawing.Size(192, 314);
+            this.resultsDataGridView.RowHeadersWidth = 51;
+            this.resultsDataGridView.Size = new System.Drawing.Size(256, 386);
             this.resultsDataGridView.TabIndex = 4;
             this.resultsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataGridView_CellContentClick);
             // 
             // player2TextBox
             // 
-            this.player2TextBox.Location = new System.Drawing.Point(64, 77);
+            this.player2TextBox.Location = new System.Drawing.Point(85, 95);
+            this.player2TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.player2TextBox.Name = "player2TextBox";
-            this.player2TextBox.Size = new System.Drawing.Size(100, 20);
+            this.player2TextBox.Size = new System.Drawing.Size(132, 22);
             this.player2TextBox.TabIndex = 3;
-            this.player2TextBox.Text = "Dorel";
+            this.player2TextBox.Text = "Alex";
             // 
             // player1TextBox
             // 
-            this.player1TextBox.Location = new System.Drawing.Point(64, 31);
+            this.player1TextBox.Location = new System.Drawing.Point(85, 38);
+            this.player1TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.player1TextBox.Name = "player1TextBox";
-            this.player1TextBox.Size = new System.Drawing.Size(100, 20);
+            this.player1TextBox.Size = new System.Drawing.Size(132, 22);
             this.player1TextBox.TabIndex = 2;
-            this.player1TextBox.Text = "Toni";
+            this.player1TextBox.Text = "Eduard";
             // 
             // player2Label
             // 
             this.player2Label.AutoSize = true;
-            this.player2Label.Location = new System.Drawing.Point(13, 80);
+            this.player2Label.Location = new System.Drawing.Point(17, 98);
+            this.player2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.player2Label.Name = "player2Label";
-            this.player2Label.Size = new System.Drawing.Size(45, 13);
+            this.player2Label.Size = new System.Drawing.Size(60, 17);
             this.player2Label.TabIndex = 1;
             this.player2Label.Text = "Player 2";
             // 
             // player1Label
             // 
             this.player1Label.AutoSize = true;
-            this.player1Label.Location = new System.Drawing.Point(13, 34);
+            this.player1Label.Location = new System.Drawing.Point(17, 42);
+            this.player1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.player1Label.Name = "player1Label";
-            this.player1Label.Size = new System.Drawing.Size(45, 13);
+            this.player1Label.Size = new System.Drawing.Size(60, 17);
             this.player1Label.TabIndex = 0;
             this.player1Label.Text = "Player 1";
             // 
-            // player1NameFilterTextBox
-            // 
-            this.player1NameFilterTextBox.Location = new System.Drawing.Point(45, 138);
-            this.player1NameFilterTextBox.Name = "player1NameFilterTextBox";
-            this.player1NameFilterTextBox.Size = new System.Drawing.Size(63, 20);
-            this.player1NameFilterTextBox.TabIndex = 6;
-            this.player1NameFilterTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 552);
+            this.ClientSize = new System.Drawing.Size(857, 679);
             this.Controls.Add(this.gameSplitContainer);
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(527, 481);
             this.Name = "mainForm";
             this.Text = "TIC TAC TOE";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);

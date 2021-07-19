@@ -215,5 +215,10 @@ namespace TicTacToe
             resultsDataGridView.DataSource = null;
             resultsDataGridView.DataSource = t.ToList();
         }
+
+        private void gameOptionsSplitContainer_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

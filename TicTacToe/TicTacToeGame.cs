@@ -30,8 +30,8 @@ namespace TicTacToe
 
         internal void LoadResults(string fileName)
         {
-             string serialisedResults = File.ReadAllText(fileName);      
-            gameResults = JsonConvert.DeserializeObject <List<GameResult>>(serialisedResults);
+            string serialisedResults = File.ReadAllText(fileName);
+            gameResults = JsonConvert.DeserializeObject<List<GameResult>>(serialisedResults);
 
         }
 
@@ -52,7 +52,7 @@ namespace TicTacToe
                 return true;
             if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[0, 2] != Ct.FreeCell)
                 return true;
-
+           
             return false;
         }
         private int GetWinner(int x, int y)
@@ -84,14 +84,14 @@ namespace TicTacToe
 
         internal void SaveGame()
         {
-            
+
             gameResults.Add(
                 new GameResult
                 {
                     Player1 = player1,
                     Player2 = player2,
                     Result = currentPlayer
-                }    
+                }
             );
         }
 
@@ -150,7 +150,7 @@ namespace TicTacToe
         internal void SaveResults(string fileName)
         {
             string serialisedResults = JsonConvert.SerializeObject(gameResults);
-            File.WriteAllText(fileName,serialisedResults);
+            File.WriteAllText(fileName, serialisedResults);
         }
     }
 }
