@@ -38,7 +38,6 @@ namespace TicTacToe
         public int Play(int x, int y)
         {
             Move(x, y);
-            //           ConsoleShow();
             return GetWinner(x, y);
         }
 
